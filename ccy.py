@@ -13,14 +13,15 @@ def currency_converter(input_amount):
     """Determine the highest denom."""
     for i in range(len(ccy_list)):
         """If amount is divisible by element."""
-        if amount // ccy_list[i] > 0:
+        if amount / ccy_list[i] > 0:
             list_start_pos = i
             denom = ccy_list[i]
             denom_count = amount // ccy_list[i]
             remainder = amount - ((amount // ccy_list[i])*ccy_list[i])
-            print(denom_count," ", denom)
+            if int(denom_count) > 0:
+                print(int(denom_count)," ", denom)
             #print(remainder)
         amount = remainder
     
   
-currency_converter(675)
+currency_converter(12.33)
